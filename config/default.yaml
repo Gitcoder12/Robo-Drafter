@@ -1,0 +1,22 @@
+# Default policy for Robo-Drafter
+name: default_policy
+version: 1
+
+# How aggressive the agent is
+params:
+  speed: 0.6
+  precision: 0.7
+  retry_limit: 2
+  exploration: 0.15
+
+# Tasks the agent knows how to attempt
+tasks:
+  pick_and_place:
+    goal: "Pick object and place at target"
+    success_threshold: 0.75
+  navigate:
+    goal: "Reach target location safely"
+    success_threshold: 0.70
+  multi:
+    goal: "Complete sequence of subtasks"
+    success_threshold: 0.80
