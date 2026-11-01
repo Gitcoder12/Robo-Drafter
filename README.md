@@ -1,21 +1,18 @@
-```markdown
 # Robo-Drafter
 
-**Adaptive evolutionary agent for robotic configuration optimization.**
+**An adaptive evolutionary agent for robotic configuration optimization.**
 
-Robo-Drafter evaluates task performance, upgrades policies on successful runs, mutates strategy on weak runs, and fully replaces the configuration when performance collapses. Designed for single-task and multi-task robotic workflows.
+Robo-Drafter evaluates robotic task performance, improves policies after successful runs, mutates strategies when performance declines, and replaces failing configurations when necessary.
 
----
+Designed to support both single-task and multi-task robotic workflows.
 
 ## Features
 
-- **Policy Evaluation** — Scores configuration performance after each run
-- **Adaptive Mutation** — Mutates strategy when results are poor
-- **Full Config Replacement** — Discards failing policies and starts fresh
-- **Generation Tracking** — Maintains history of fitness scores and mutation types
-- **Streamlit Dashboard** — Visual interface to watch the evolutionary process
-
----
+- **Policy Evaluation** — Measures configuration performance after each execution.
+- **Adaptive Mutation** — Adjusts strategies when performance is below expectations.
+- **Configuration Replacement** — Discards failing policies and generates fresh configurations.
+- **Generation Tracking** — Records fitness scores, mutation types, and evolutionary history.
+- **Interactive Dashboard** — Visualizes the evolutionary process using Streamlit.
 
 ## Project Structure
 
@@ -24,100 +21,124 @@ Robo-Drafter/
 ├── README.md
 ├── pyproject.toml
 ├── requirements.txt
-├── dashboard.py                  # Streamlit evolutionary dashboard
+├── dashboard.py
 ├── config/
-│   └── default.yaml              # Default policy configuration
+│   └── default.yaml
 ├── src/
 │   └── robo_drafter/
 │       ├── __init__.py
-│       ├── agent.py              # Main adaptive agent loop
-│       ├── evaluator.py          # Performance scoring
-│       ├── policy.py             # Current strategy / config
-│       ├── mutator.py            # Mutation and replacement logic
-│       ├── cli.py                # Command-line interface
-│       ├── types.py              # Shared data models
-│       ├── config_loader.py      # YAML config loading
-│       └── simulator.py          # Task simulation environment
+│       ├── agent.py
+│       ├── evaluator.py
+│       ├── policy.py
+│       ├── mutator.py
+│       ├── cli.py
+│       ├── types.py
+│       ├── config_loader.py
+│       └── simulator.py
 └── examples/
-    └── run_demo.py               # Quick demo script
+    └── run_demo.py
 ```
 
----
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Gitcoder12/Robo-Drafter.git
+cd Robo-Drafter
+```
+
+### 2. Create and activate a virtual environment
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**Linux / macOS:**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -e .
+pip install streamlit plotly pandas pyyaml
+```
 
 ## Quick Start
 
+Run the demonstration:
+
 ```bash
-# Clone the repository
-git clone https://github.com/Gitcoder12/Robo-Drafter.git
-cd Robo-Drafter
-
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-
-# Install dependencies
-pip install -e .
-pip install streamlit plotly pandas pyyaml
-
-# Run the demo
 python examples/run_demo.py
-
-# Launch the dashboard
-streamlit run dashboard.py
 ```
 
----
+Launch the interactive dashboard:
+
+```bash
+streamlit run dashboard.py
+```
 
 ## How It Works
 
+Robo-Drafter follows an evolutionary optimization loop:
+
 ```text
-┌─────────────┐
-│   Policy    │
-└──────┬──────┘
-       ▼
-┌─────────────┐
-│  Evaluator  │  →  Score the run
-└──────┬──────┘
-       ▼
-┌─────────────┐
-│   Mutator   │  →  Upgrade / Mutate / Replace
-└──────┬──────┘
-       ▼
-┌─────────────┐
-│    Agent    │  →  Decide next action
-└─────────────┘
+┌─────────────────┐
+│     Policy      │
+│ Current Config  │
+└────────┬────────┘
+         ▼
+┌─────────────────┐
+│    Evaluator    │
+│  Score Results  │
+└────────┬────────┘
+         ▼
+┌─────────────────┐
+│     Mutator     │
+│ Upgrade / Mutate│
+│    / Replace    │
+└────────┬────────┘
+         ▼
+┌─────────────────┐
+│      Agent      │
+│ Next Generation │
+└─────────────────┘
 ```
 
-1. **Policy** holds the current configuration and strategy.
-2. **Evaluator** measures success and returns a fitness score.
-3. **Mutator** improves the policy or replaces it entirely on failure.
-4. **Agent** orchestrates the full loop across generations.
+### Evolutionary Workflow
 
----
+1. **Initialize** — Load the initial policy and configuration.
+2. **Evaluate** — Execute the policy and calculate its fitness score.
+3. **Adapt** — Improve successful policies or mutate underperforming strategies.
+4. **Replace** — Generate a fresh configuration when performance collapses.
+5. **Track** — Record fitness scores and mutation history across generations.
 
 ## Dashboard
 
-Launch the visual interface:
+The Streamlit dashboard provides real-time visibility into the evolutionary process, including:
 
-```bash
-streamlit run dashboard.py
-```
-
-The dashboard shows:
 - Current generation
 - Best fitness score
-- Last mutation type
-- Fitness progression chart over generations
-
----
+- Most recent mutation type
+- Fitness progression across generations
 
 ## Configuration
 
-Edit `config/default.yaml` to change default parameters, strategy, and mutation behavior.
+Customize the agent's behavior by editing:
 
----
+```text
+config/default.yaml
+```
+
+This file controls default parameters, policy strategies, and mutation behavior.
 
 ## License
 
-Apache License 2.0
-```
+Distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
