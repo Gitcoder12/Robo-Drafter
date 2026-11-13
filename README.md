@@ -67,8 +67,7 @@ source .venv/bin/activate
 ### 3. Install dependencies
 
 ```bash
-pip install -e .
-pip install streamlit plotly pandas pyyaml
+pip install -e ".[dashboard]"
 ```
 
 ## Quick Start
@@ -122,7 +121,9 @@ Robo-Drafter follows an evolutionary optimization loop:
 
 ## Dashboard
 
-The Streamlit dashboard provides real-time visibility into the evolutionary process, including:
+Install the optional dashboard dependencies with `pip install -e ".[dashboard]"`. The core CLI does not require Streamlit, pandas, or Plotly.
+
+The Streamlit dashboard is a synthetic demonstration of the evolutionary loop. It generates illustrative fitness values in the browser session; it does not connect to a physical robot, robotics simulator, camera, or hardware controller. It provides visibility into the demo state, including:
 
 - Current generation
 - Best fitness score
