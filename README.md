@@ -154,3 +154,15 @@ Distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICEN
 - [README quality checklist](README_QUALITY_CHECKLIST.md)
 - [Contribution workflow](CONTRIBUTING.md)
 - [Agent instructions](AGENTS.md) and [agent skill map](SKILLS.md)
+
+## Understanding the project
+
+### In plain language
+
+A research prototype that experiments with changing robot configuration or policy settings based on how well a simulated task performs.
+
+### Technical and research view
+
+Explain the actual package layout, core modules, inputs, outputs, algorithms, external dependencies and execution path here. Link architecture or experiment notes and describe failure handling.
+
+For future work, see [FEATURE_UPGRADE_PLAN.md](FEATURE_UPGRADE_PLAN.md), [ACTIVITY_LOG.md](ACTIVITY_LOG.md), [COMPANY_FIT.md](COMPANY_FIT.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
