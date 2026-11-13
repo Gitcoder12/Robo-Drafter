@@ -17,3 +17,12 @@ Python package with configurable evolution logic and a Streamlit dashboard. The 
 | YYYY-MM-DD | contributor id | link | paths | exact command | pass / fail / not run | evidence |
 
 Record failures, regressions, reverted work and checks not run. Never overwrite historical entries or attribute changes to an agent that did not perform them. A green CI run is not proof of production readiness.
+
+## Portfolio documentation rollout — 2026-11-13
+
+- Documentation PR: https://github.com/Gitcoder12/Robo-Drafter/pull/3
+- Added project-specific feature roadmap, company-fit mapping, beginner/technical README guide and README quality checklist.
+- Added contributor and bounded agent/skills guidance; safety-sensitive limitations are explicitly documented.
+- README now contains both a plain-language explanation and a technical/research view.
+- Validation: documentation/source review only; no application runtime test or deployment is claimed by this docs PR.
+- Status: draft PR, not merged.
