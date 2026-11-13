@@ -31,3 +31,8 @@ This section supplements the maintainer-authored README above. The original text
 - Mark unverified sources, identifiers, metrics, benchmark results and external claims as unknown/unverified rather than guessing.
 - Verify setup, execution, tests and public claims against the exact current commit before using this repository in a job, research or academic application.
 - See [MODEL_AUDIT_ROUTER.md](MODEL_AUDIT_ROUTER.md) for independent model review instructions and the merge gate.
+
+
+### Proposed dashboard clarification — open PR, not yet merged (2026-11-13)
+
+[PR #2](https://github.com/Gitcoder12/Robo-Drafter/pull/2) proposes explicit installation instructions for the optional Streamlit dashboard and a more precise prototype scope. Its branch README states that the dashboard is a **synthetic demonstration**: it generates illustrative fitness values in a browser session and does not connect to a physical robot, robotics simulator, camera, or hardware controller. Do not present the dashboard as a live robot-control or validated robotics experiment unless a separate, tested integration proves that capability.
