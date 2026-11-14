@@ -6,7 +6,6 @@ from datetime import datetime
 
 st.set_page_config(
     page_title="RoboDrafter: Evolutionary Config Optimizer",
-    page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -91,7 +90,7 @@ st.divider()
 
 col_btn, col_info = st.columns([1, 3])
 with col_btn:
-    if st.button("🧬 Evolve Next Generation", type="primary", use_container_width=True):
+    if st.button("Evolve Next Generation", type="primary", use_container_width=True):
         evolve_generation()
         st.rerun()
 

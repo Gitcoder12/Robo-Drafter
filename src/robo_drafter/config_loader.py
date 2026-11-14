@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import os
 from pathlib import Path
 from typing import Any
 
@@ -59,4 +58,7 @@ def save_policy_config(config: PolicyConfig, path: str | Path) -> None:
         yaml.safe_dump(data, f, default_flow_style=False, sort_keys=False)
 
 
-def get_param(config: PolicyConfig, key: str, default: Any = None) -> 
+def get_param(config: PolicyConfig, key: str, default: Any = None) -> Any:
+    """Return a policy parameter, or the supplied default when it is absent."""
+    return config.params.get(key, default)
+
