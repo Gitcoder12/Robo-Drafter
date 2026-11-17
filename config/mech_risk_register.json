@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "status": "concept_only_not_build_ready",
+  "allowed_missions": ["industrial inspection", "disaster-area sensing", "remote material handling"],
+  "excluded_missions": ["weaponization", "autonomous use of force", "crowd control"],
+  "risks": [
+    {"id":"R1","hazard":"toppling_or_unstable_load","severity":"critical","controls":["low centre of gravity","wide support polygon","stability monitoring","speed limits","safe kneel state"]},
+    {"id":"R2","hazard":"joint_or_frame_failure","severity":"critical","controls":["structural FEA","fatigue analysis","proof-load test","inspection intervals","redundant retention"]},
+    {"id":"R3","hazard":"crush_or_pinch_injury","severity":"critical","controls":["force and speed limits","physical guarding","proximity sensing","exclusion zones","independent emergency stop"]},
+    {"id":"R4","hazard":"battery_thermal_event","severity":"critical","controls":["certified battery and BMS","thermal isolation","fusing","fire response plan"]},
+    {"id":"R5","hazard":"sensor_occlusion_or_pose_error","severity":"high","controls":["independent sensor modalities","uncertainty thresholds","stale-data safe stop"]},
+    {"id":"R6","hazard":"control_or_network_failure","severity":"critical","controls":["local safety controller","watchdog","safe-state fallback","no cloud-only emergency stop"]},
+    {"id":"R7","hazard":"floor_or_ground_failure","severity":"high","controls":["ground-bearing review","route survey","distributed loads"]},
+    {"id":"R8","hazard":"maintenance_injury","severity":"high","controls":["lockout-tagout","service supports","lift points","inspection procedures"]}
+  ],
+  "fabrication_gate": [
+    "mission and load definition",
+    "kinematic simulation and collision analysis",
+    "structural FEA and physical proof testing",
+    "battery/thermal and electrical safety assessment",
+    "functional safety review",
+    "human-factors and maintenance review",
+    "independent engineering sign-off"
+  ]
+}
