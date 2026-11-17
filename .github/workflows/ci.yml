@@ -21,10 +21,10 @@ jobs:
       - name: Install package and dashboard extras
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -e ".[dashboard]"
+          python -m pip install -e ".[dashboard,dev]"
       - name: Compile project code
         run: python -m compileall -q src examples dashboard.py
       - name: Run unit tests
-        run: python -m unittest discover -s tests -v
+        run: python -m pytest -q
       - name: Check CLI entry point
         run: robo-drafter --help
