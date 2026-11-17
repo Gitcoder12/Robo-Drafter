@@ -44,7 +44,7 @@ class Policy:
         if not isinstance(tasks, dict):
             raise ValueError("policy tasks must be a mapping")
 
-        normalized_params: dict[str, float] = {}
+        normalized_params: dict[str, int | float] = {}
         for key, value in params.items():
             if not isinstance(key, str) or not key.strip():
                 raise ValueError("policy parameter names must be non-empty strings")
@@ -56,7 +56,7 @@ class Policy:
                 raise ValueError(f"policy parameter {key!r} must be between 0 and 1")
             if key == "retry_limit" and (not isinstance(value, int) or value < 0):
                 raise ValueError("retry_limit must be a non-negative integer")
-            normalized_params[key] = float(value)
+            normalized_params[key] = value if key == "retry_limit" else float(value)
 
         normalized_tasks: dict[str, dict[str, Any]] = {}
         for task_name, task in tasks.items():
