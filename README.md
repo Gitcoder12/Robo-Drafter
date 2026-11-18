@@ -54,3 +54,10 @@ This section supplements the maintainer-authored README above. The original text
 3. Clearly separate simulation results from hardware experiments; add hardware interlocks and independent safety review before physical deployment.
 
 **Verification status:** static source/test inspection only; agent workflow, full test suite, and hardware behavior remain unverified.
+
+---
+
+## Examples Used
+- Improving a simulated robot's task-completion policy after a successful run
+- Mutating a policy after repeated task failures
+- Rolling back an unsafe or invalid configuration
