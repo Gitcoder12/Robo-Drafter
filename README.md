@@ -54,3 +54,27 @@ This section supplements the maintainer-authored README above. The original text
 3. Clearly separate simulation results from hardware experiments; add hardware interlocks and independent safety review before physical deployment.
 
 **Verification status:** static source/test inspection only; agent workflow, full test suite, and hardware behavior remain unverified.
+
+
+---
+
+## Branch Activity & Development History
+
+**Audit date:** 2026-11-18 · **Comparison base:** `main`
+
+| Branch | Difference from `main` | Observed work / changed paths |
+|---|---:|---|
+| `chore/remove-emoji-glyphs-2026-11-13` | 5 ahead / 6 behind | Glyph cleanup in `dashboard.py` |
+| `copilot/robo-drafter-reproducible-evolution` | 0 / 11 | No unique commits relative to current `main`; branch is behind |
+| `docs/dashboard-deps-and-prototype-scope` | 9 / 6 | CI, config loader, prototype scope/worklog and configuration tests; README has substantial removals |
+| `docs/portfolio-operating-kit-2026-11-13` | 4 / 6 | Activity log, agent guidance, company-fit notes, contributor guide, feature plan and skills; README has substantial removals |
+| `docs/project-status-2026-11-16-robo-drafter` | 1 / 2 | Project status snapshot: `PROJECT_STATUS.md` |
+| `feat/robot-concept-safety` | 8 / 1 | Mech risk register, large-mech risk documentation, policy validation and tests |
+
+### Open pull requests observed during this audit
+
+- [PR #4 — project status snapshot](https://github.com/Gitcoder12/Robo-Drafter/pull/4)
+- [PR #3 — project handbook, upgrade plan and agent skills](https://github.com/Gitcoder12/Robo-Drafter/pull/3)
+- [PR #1 — remove emoji glyphs](https://github.com/Gitcoder12/Robo-Drafter/pull/1)
+
+**Review note:** The two documentation branches remove substantial README content; inspect their diffs before merging. The robot safety branch has policy/test changes but still requires test execution and review of the risk assumptions. No branches have been merged or deleted by this documentation update.
