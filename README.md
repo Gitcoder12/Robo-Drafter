@@ -61,3 +61,27 @@ This section supplements the maintainer-authored README above. The original text
 - Improving a simulated robot's task-completion policy after a successful run
 - Mutating a policy after repeated task failures
 - Rolling back an unsafe or invalid configuration
+
+
+---
+
+## Comparison with Existing Open-Source Projects
+
+Robo-Drafter is documented as an adaptive policy prototype that evaluates task outcomes and updates configuration parameters. Its README and audit notes describe a software-policy/simulation prototype, not a validated physical robot controller. The following projects provide relevant agent and simulation references.
+
+| Project | Established focus | Relationship to Robo-Drafter |
+|---|---|---|
+| [Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | Standard API for reinforcement-learning environments | Provides reusable environment interfaces; Robo-Drafter's current focus is policy mutation/evaluation rather than a general environment standard. |
+| [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3) | Tested implementations of reinforcement-learning algorithms | A mature RL library; Robo-Drafter currently documents rule/config-driven adaptation and should not imply equivalent learned-policy capability. |
+| [Ray RLlib](https://github.com/ray-project/ray) | Scalable distributed reinforcement-learning workloads | A broader scalable training framework; Robo-Drafter is a small local policy experiment rather than a distributed training system. |
+
+### Where Robo-Drafter is different
+- **Outcome-triggered policy changes:** the stated concept adjusts or replaces policy configuration based on task evaluation bands.
+- **Small, inspectable adaptation loop:** the prototype keeps evaluator, policy and mutator components separate.
+- **Single/multi-task configuration intent:** the design aims to make the same adaptation pattern reusable across configured tasks.
+
+### Where established projects are stronger
+Gymnasium, Stable-Baselines3 and RLlib provide mature environment interfaces, algorithms, evaluation conventions and broader ecosystem support. Robo-Drafter does not currently demonstrate comparable RL training or hardware-robot validation.
+
+### Safety and evidence requirements
+Validate all policy inputs, constrain parameter ranges and preserve rollback checkpoints. Test deterministic mutation decisions, task success and regression rates against fixed baselines. Keep simulated outcomes separate from physical robot experiments; require hardware interlocks and independent safety review before any real-world control. This is an architecture comparison, not a robotics-performance claim.
