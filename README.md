@@ -1,7 +1,42 @@
 # Robo-Drafter
 Adaptive robotic agent that evaluates task success. Upgrades policies on good runs, mutates strategy on bad runs, and replaces the config entirely on failure. Handles single and multi-task workflows.
 
-#File Structure
+## Run Robo-Drafter locally
+
+Robo-Drafter currently runs as a Python CLI/demo. The optional Streamlit dashboard mentioned in an unmerged proposal is not part of the current default-branch launch path.
+
+```bash
+git clone https://github.com/Gitcoder12/Robo-Drafter.git
+cd Robo-Drafter
+python -m venv .venv
+```
+
+Activate the environment:
+
+```powershell
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+```
+
+```bash
+# macOS / Linux
+source .venv/bin/activate
+```
+
+Install and run:
+
+```bash
+python -m pip install --upgrade pip
+pip install -e .
+robo-drafter --help
+python examples/run_demo.py
+```
+
+The demo uses the sample policy in `config/default.yaml`. It is a software policy prototype, not a physical robot controller.
+
+---
+
+# File Structure
 Robo-Drafter/
 ├── README.md
 ├── pyproject.toml
